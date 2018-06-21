@@ -38,7 +38,8 @@ open class Route: DirectionsResult {
         case let geometry as JSONDictionary:
             coordinates = CLLocationCoordinate2D.coordinates(geoJSON: geometry)
         case let geometry as String:
-            coordinates = decodePolyline(geometry, precision: 1e5)!
+            let precision = routeOptions.shapeFormat == .polyline ? 1e5 : 1e6
+            coordinates = decodePolyline(geometry, precision: precision)!
         default:
             coordinates = nil
         }
