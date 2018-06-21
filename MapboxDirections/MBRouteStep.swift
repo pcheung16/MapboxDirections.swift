@@ -636,7 +636,7 @@ open class RouteStep: NSObject, NSSecureCoding {
         case let geometry as JSONDictionary:
             coordinates = CLLocationCoordinate2D.coordinates(geoJSON: geometry)
         case let geometry as String:
-            coordinates = decodePolyline(geometry, precision: 1e5)!
+            coordinates = decodePolyline(geometry, precision: 1e6)!
         default:
             coordinates = nil
         }
