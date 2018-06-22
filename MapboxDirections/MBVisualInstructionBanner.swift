@@ -14,7 +14,7 @@ open class VisualInstructionBanner: NSObject, NSSecureCoding {
     /**
      The most important information to convey to the user about the `RouteStep`.
      */
-    @objc public let primaryInstruction: VisualInstruction
+    @objc public var primaryInstruction: VisualInstruction
     
     /**
      Less important details about the `RouteStep`.
